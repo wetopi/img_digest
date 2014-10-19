@@ -1,15 +1,20 @@
 {
-    "name": "img_diggest",
-    "version": "0.1.0",
-    "description": "Image Processor for weTopi",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@bitbucket.org:joanvega/wetopi_img_diggest.git"
-    },
-    "author": "joan",
-    "license": "ISC"
+  "name": "img_diggest",
+  "version": "0.1.0",
+  "description": "Image Processor for weTopi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:joanvega/wetopi_img_diggest.git"
+  },
+  "author": "joan",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.2.1",
+    "dotenv": "^0.4.0",
+    "lwip": "^0.0.5"
+  }
 }
