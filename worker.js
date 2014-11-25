@@ -23,5 +23,5 @@ var resizer = require('./lib/resizer');
 services.prepareFs();
 
 services.consume(function(msg, callback) {
-    resizer.createDetailAndListImages(msg.content.toString(), callback);
+    resizer.createListImages(msg.content.toString(), callback);
 });

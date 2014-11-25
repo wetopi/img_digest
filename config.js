@@ -35,8 +35,8 @@ config.out_path = '/tmp/img_diggest_out';
 config.img_list = {
     'dir': '/list',
     'format' : 'jpg',
-    'width': 260,
-    'height': 120
+    'width': 640,
+    'height': 160
 };
 config.img_detail = {
     'dir': '/detail',
