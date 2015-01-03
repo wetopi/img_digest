@@ -33,14 +33,14 @@ config.in_path = '/tmp/img_diggest_in';
 config.out_path = '/tmp/img_diggest_out';
 
 config.img_list = {
-    'dir': '/list',
+    'dir': 'list', // without leading slashes
     'format' : 'jpg',
     'width': 640,
     'height': 160,
     'shadow_file': 'img_resources/shadow_v3.png'
 };
 config.img_detail = {
-    'dir': '/detail',
+    'dir': 'detail', // without leading slashes
     'format' : 'jpg',
     'width': 640,
     'height': 854
