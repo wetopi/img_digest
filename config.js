@@ -24,7 +24,7 @@ config.queue = {
 config.publish_resize = {
     'routing_key': 'resize-img',
     'options': {
-        'delivery_mode': 1, // non persistant
+        'delivery_mode': 1 // non persistant
     }
 };
 
@@ -36,7 +36,8 @@ config.img_list = {
     'dir': '/list',
     'format' : 'jpg',
     'width': 640,
-    'height': 160
+    'height': 160,
+    'shadow_file': 'img_resources/shadow_v3.png'
 };
 config.img_detail = {
     'dir': '/detail',
