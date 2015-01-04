@@ -11,16 +11,14 @@
  * Time: 18:44
  */
 
-// load ENV conf
-var dotenv = require('dotenv');
-dotenv.load();
 var config = require('./config');
-
 var services = require('./lib/services');
 var resizer = require('./lib/resizer');
 
 
-
+/**
+ * consume 'resizer' on direct exchange
+ */
 services.consume(config.upload, function(msg, callback) {
-    resizer.createListImages(JSON.parse(msg.content.toString()), callback);
+    resizer.resizeImage(JSON.parse(msg.content.toString()), callback);
 });

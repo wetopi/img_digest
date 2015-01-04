@@ -33,18 +33,30 @@ config.upload = {
 config.in_path = '/tmp/img_diggest_in';
 
 
-config.img_list = {
-    'dir': 'list', // without leading slashes
+config.img_list_home = {
+    'dir': 'list_home', // without leading slashes
     'format' : 'jpg',
     'width': 640,
     'height': 160,
+    'quality': 80,
     'shadow_file': 'img_resources/shadow_v3.png'
 };
+
+config.img_list_store = {
+    'dir': 'list_store', // without leading slashes
+    'format' : 'jpg',
+    'width': 320,
+    'height': 320,
+    'quality': 70,
+    'shadow_file': 'img_resources/shadow_store_v1.png'
+};
+
 config.img_detail = {
     'dir': 'detail', // without leading slashes
     'format' : 'jpg',
     'width': 640,
-    'height': 854
+    'height': 854,
+    'quality': 70
 };
 
 module.exports = config;
