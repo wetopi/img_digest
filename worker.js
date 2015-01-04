@@ -3,8 +3,8 @@
 /**
  * img_diggest service
  *
- * this service is in charge of diggesting user images
- * in order to prepare its sizes and weights for the api consume
+ * this worker is in charge of diggesting user images from queue resizer
+ * in order to productce the sizes and weights for the consumer
  *
  * User: joan
  * Date: 18/10/14
@@ -14,13 +14,13 @@
 // load ENV conf
 var dotenv = require('dotenv');
 dotenv.load();
+var config = require('./config');
 
 var services = require('./lib/services');
 var resizer = require('./lib/resizer');
 
 
-services.prepareFs();
 
-services.consume(function(msg, callback) {
+services.consume(config.upload, function(msg, callback) {
     resizer.createListImages(JSON.parse(msg.content.toString()), callback);
 });

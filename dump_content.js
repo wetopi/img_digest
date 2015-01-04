@@ -8,12 +8,12 @@
 // load ENV conf
 var dotenv = require('dotenv');
 dotenv.load();
+var config = require('./config');
 
 var fs = require('fs');
 var mime = require('mime');
 var crypto = require('crypto');
 var uuid = require('node-uuid');
-var config = require('./config');
 var services = require('./lib/services');
 var gridfs = require('./lib/gridfs');
 var imgData = require('./lib/img_data');
@@ -22,10 +22,13 @@ var debug = require('debug')('dump_content');
 var VError = require('verror');
 
 
-
-
+debug('start');
 // do not start until we have a connection to share on every file management
 services.getMongoDbConnection(function() {
+
+  // Fs input dir where test images come from
+  if(!fs.existsSync(config.in_path)) fs.mkdirSync(config.in_path, 0777);
+
   addAllFilesFromFs();
   debug('done');
 });
@@ -48,7 +51,7 @@ function addAllFilesFromFs() {
         if (err) {
           console.error(err.message);
         } else {
-          services.publish(config.publish_resize, data);
+          services.publish(config.upload, data);
         }
       });
     }

@@ -3,34 +3,35 @@ var config = {};
 config.domain_name = 'wetopi';
 config.service_name = 'img_diggest';
 
-config.exchange = {
-    'name': 'wetopi.img_diggest',
-    'type': 'direct',
-    'options': {
-        'durable': true
+config.upload = {
+    'exchange': {
+        'name': 'img_diggest.prod.e.direct.upload', // Image diggest env Production Exchange type Direct for uploads
+        'type': 'direct',
+        'options': {
+            'durable': true
+        }
+    },
+    'queue': {
+        'name': 'img_diggest.prod.q.resizer', // Image diggest env Production Queue for Resizer
+        'routing_pattern': 'resizer',
+        'options': {
+            'exclusive': false,
+            'durable': true
+        }
+    },
+    'message': {
+        'routing_key': 'resizer',
+        'options': {
+            'delivery_mode': 1 // non persistant
+        }
     }
+
 };
 
-config.queue = {
-    'name': 'img_to_resize',
-    'routing_pattern': 'resize-img',
-    'oprions': {
-        'exclusive': false,
-        'durable': true
-    }
-};
 
-
-config.publish_resize = {
-    'routing_key': 'resize-img',
-    'options': {
-        'delivery_mode': 1 // non persistant
-    }
-};
-
-
+// test images:
 config.in_path = '/tmp/img_diggest_in';
-config.out_path = '/tmp/img_diggest_out';
+
 
 config.img_list = {
     'dir': 'list', // without leading slashes
