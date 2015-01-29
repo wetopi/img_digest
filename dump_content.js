@@ -84,10 +84,8 @@ function addThisFile(theFile, callback) {
   gridfs.storeFile(theFile, fileName, mimeType, function (err) {
 
     var data = imgData.make({
-      userId: '546a2725ddc5861759b9229c',
       filename: fileName,
-      mime: mimeType,
-      applauses: 0
+      mime: mimeType
     });
 
     if (err) {
