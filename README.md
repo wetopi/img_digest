@@ -33,3 +33,6 @@ AWS_DEFAULT_REGION=eu-west-1
 ```bash
 fig up -d
 ```
+
+> IMPORTANT: this fig.yml does not build a docker image. This is for local development.
+> img_diggest uses the npm module lwip. This module needs code targetting the machine that runs it. If lwip echoes 'no suitable image found.', then delete node_modules/lwip and perform npm install in you container.
