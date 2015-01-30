@@ -5,17 +5,14 @@
  * this simulates what wetopi api does when user posts an image.
  */
 
-// load ENV conf
-var dotenv = require('dotenv');
-dotenv.load();
 var config = require('./config');
 
 var fs = require('fs');
 var mime = require('mime');
 var crypto = require('crypto');
 var uuid = require('node-uuid');
-var services = require('./lib/services');
-var gridfs = require('./lib/gridfs');
+var db = require('./lib/db');
+var message = require('./lib/message');
 var imgData = require('./lib/img_data');
 
 var debug = require('debug')('dump_content');
@@ -24,7 +21,7 @@ var VError = require('verror');
 
 debug('start');
 // do not start until we have a connection to share on every file management
-services.getMongoDbConnection(function() {
+db.getMongoDbConnection(function() {
 
   // Fs input dir where test images come from
   if(!fs.existsSync(config.in_path)) fs.mkdirSync(config.in_path, 0777);
@@ -35,7 +32,7 @@ services.getMongoDbConnection(function() {
 
 
 /**
- * Read files from fs, saves them on gridfs and emmits a message for each one when done.
+ * Read files from fs, saves them to db and emmits a message for each one when done.
  */
 function addAllFilesFromFs() {
 
@@ -51,7 +48,7 @@ function addAllFilesFromFs() {
         if (err) {
           console.error(err.message);
         } else {
-          services.publish(config.upload, data);
+          message.publish(config.upload, data);
         }
       });
     }
@@ -81,7 +78,7 @@ function addThisFile(theFile, callback) {
   }
 
 
-  gridfs.storeFile(theFile, fileName, mimeType, function (err) {
+  db.storeFile(theFile, fileName, mimeType, function (err) {
 
     var data = imgData.make({
       filename: fileName,

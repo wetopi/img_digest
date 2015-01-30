@@ -1,9 +1,10 @@
 {
   "name": "img_diggest",
   "version": "0.1.0",
-  "description": "Image Processor for weTopi",
+  "description": "Image Processor for Wetopi",
   "main": "index.js",
   "scripts": {
+    "start": "node worker.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +17,6 @@
     "amqplib": "^0.3.0",
     "aws-sdk": "^2.1.4",
     "debug": "^2.1.0",
-    "dotenv": "^0.4.0",
     "lwip": "^0.0.5",
     "mime": "^1.2.11",
     "mongodb": "^1.4.19",

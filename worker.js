@@ -12,13 +12,13 @@
  */
 
 var config = require('./config');
-var services = require('./lib/services');
+var message = require('./lib/message');
 var resizer = require('./lib/resizer');
 
 
 /**
  * consume 'resizer' on direct exchange
  */
-services.consume(config.upload, function(msg, callback) {
+message.consume(config.upload, function(msg, callback) {
     resizer.resizeImage(JSON.parse(msg.content.toString()), callback);
 });
