@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * img_diggest service
+ * img_digest service
  *
  * this worker is in charge of diggesting user images from queue resizer
  * in order to productce the sizes and weights for the consumer

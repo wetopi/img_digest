@@ -1,18 +1,18 @@
 var config = {};
 
 config.domain_name = 'wetopi';
-config.service_name = 'img_diggest';
+config.service_name = 'img_digest';
 
 config.upload = {
     'exchange': {
-        'name': 'img_diggest.prod.e.direct.upload', // Image diggest env Production Exchange type Direct for uploads
+        'name': 'img_digest.prod.e.direct.upload', // Image diggest env Production Exchange type Direct for uploads
         'type': 'direct',
         'options': {
             'durable': true
         }
     },
     'queue': {
-        'name': 'img_diggest.prod.q.resizer', // Image diggest env Production Queue for Resizer
+        'name': 'img_digest.prod.q.resizer', // Image diggest env Production Queue for Resizer
         'routing_pattern': 'resizer',
         'options': {
             'exclusive': false,
@@ -30,7 +30,7 @@ config.upload = {
 
 
 // test images:
-config.in_path = '/tmp/img_diggest_in';
+config.in_path = '../api/fixtures/images';
 
 
 config.img_list_home = {

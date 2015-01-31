@@ -1,7 +1,7 @@
 worker:
     image: wetopi/node
     volumes:
-        - /home/wetopi/img_diggest:/usr/src/app
+        - /home/wetopi/img_digest:/usr/src/app
     environment:
         - NODE_ENV=development
         - DEBUG=*

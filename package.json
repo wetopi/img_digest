@@ -1,5 +1,5 @@
 {
-  "name": "img_diggest",
+  "name": "img_digest",
   "version": "0.1.0",
   "description": "Image Processor for Wetopi",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:joanvega/wetopi_img_diggest.git"
+    "url": "git@bitbucket.org:joanvega/wetopi_img_digest.git"
   },
   "author": "joan",
   "license": "ISC",

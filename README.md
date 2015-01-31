@@ -1,10 +1,10 @@
 #Image biggest
 
-img_diggest is the service in charge of resizing and beautifying our images.
+img_digest is the service in charge of resizing and beautifying our images.
 
 ## The worker
 
-Service worker consumes from the Rabbitmq queue `img_diggest.prod.q.resizer`
+Service worker consumes from the Rabbitmq queue `img_digest.prod.q.resizer`
 This worker pics images from our temporary file storage *MongoDB GridFS*
 And depending on position and applauses, It builds our different images, storing them in AWS S3
 
@@ -35,4 +35,4 @@ fig up -d
 ```
 
 > IMPORTANT: this fig.yml does not build a docker image. This is for local development.
-> img_diggest uses the npm module lwip. This module needs code targetting the machine that runs it. If lwip echoes 'no suitable image found.', then delete node_modules/lwip and perform npm install in you container.
+> img_digest uses the npm module lwip. This module needs code targetting the machine that runs it. If lwip echoes 'no suitable image found.', then delete node_modules/lwip and perform npm install in you container.
