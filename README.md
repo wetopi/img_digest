@@ -1,4 +1,4 @@
-#Image biggest
+#Image digest
 
 img_digest is the service in charge of resizing and beautifying our images.
 
