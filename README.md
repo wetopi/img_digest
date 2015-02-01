@@ -45,6 +45,7 @@ docker run --name img_diggest \
            -e AWS_ACCESS_KEY_ID \
            -e AWS_SECRET_ACCESS_KEY \
            -e AWS_DEFAULT_REGION \
+           -e 'DEBUG=*' \
            --link api_rabbitmq_1:rabbitmq \
            --link api_mongodb_1:mongodb \
            -v /home/wetopi/img_digest:/usr/src/app \
