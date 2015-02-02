@@ -3,7 +3,7 @@
 /**
  * img_digest service
  *
- * this worker is in charge of diggesting user images from queue resizer
+ * this worker is in charge of digesting user images from queue resizer
  * in order to productce the sizes and weights for the consumer
  *
  * User: joan

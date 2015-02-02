@@ -34,7 +34,7 @@ assuming we have MongoDB and rabbitMQ containers running as:
 - api_mongodb_1
 
 ```sh
-docker run --name img_diggest \
+docker run -d --name img_digest \
            -e NODE_ENV=development \
            -e RABBITMQ_VIRTUALHOST=/wetopi \
            -e RABBITMQ_USER \
@@ -49,7 +49,7 @@ docker run --name img_diggest \
            --link api_rabbitmq_1:rabbitmq \
            --link api_mongodb_1:mongodb \
            -v /home/wetopi/img_digest:/usr/src/app \
-           wetopi/node
+           wetopi/node \
            forever --watchDirectory=/usr/src/app -w -m 3 ./worker.js
 ```
 
