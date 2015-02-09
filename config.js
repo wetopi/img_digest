@@ -36,6 +36,7 @@ config.in_path = '../api/fixtures/images';
 config.img_list_home = {
     'dir': 'list_home', // without leading slashes
     'format' : 'jpg',
+    'mimetype' : 'image/jpeg',
     'width': 640,
     'height': 160,
     'quality': 80,
@@ -45,6 +46,7 @@ config.img_list_home = {
 config.img_list_store = {
     'dir': 'list_store', // without leading slashes
     'format' : 'jpg',
+    'mimetype' : 'image/jpeg',
     'width': 320,
     'height': 320,
     'quality': 70,
@@ -54,6 +56,7 @@ config.img_list_store = {
 config.img_detail = {
     'dir': 'detail', // without leading slashes
     'format' : 'jpg',
+    'mimetype' : 'image/jpeg',
     'width': 640,
     'height': 854,
     'quality': 70
